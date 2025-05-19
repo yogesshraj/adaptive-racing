@@ -1,0 +1,11 @@
+# No external dependencies required - using only Python standard library
+# The application uses:
+# - socket (standard library)
+# - threading (standard library)
+# - tkinter (standard library)
+# - ctypes (standard library)
+# - dataclasses (standard library, Python 3.7+) 
+numpy>=1.21.0
+PyQt5>=5.15.0
+pyqtgraph>=0.12.0
+# (add any other dependencies you need for telemetry, analysis, etc.) 
