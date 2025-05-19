@@ -25,7 +25,9 @@ This application connects to F1 22, captures real-time telemetry data, and displ
      ```
    - Install dependencies:
      ```bash
-     pip install -r requirements.txt
+     pip install -r requirements/base.txt  # For basic usage
+     pip install -r requirements/dev.txt   # For development
+     pip install -r requirements/test.txt  # For running tests
      ```
 
 ### 3. Running the Application
@@ -35,14 +37,39 @@ This application connects to F1 22, captures real-time telemetry data, and displ
 
 ## Project Structure
 ```
-/adaptive_racing_telemetry
-|-- /data_models.py         # Defines ctypes structures for F1 22 UDP packets
-|-- /telemetry_listener.py  # Handles UDP socket communication and packet reception
-|-- /packet_parser.py       # Parses raw UDP data into structured Python objects
-|-- /gui.py                 # Tkinter based GUI for displaying telemetry
-|-- /main.py                # Main application script
-|-- /config.py              # Configuration settings (port, IP)
-|-- /utils.py               # Utility functions (e.g., data normalization)
-|-- README.md               # This file
-|-- requirements.txt        # Python package dependencies
+adaptive-racing/
+├── src/                           # Source code
+│   ├── telemetry/                 # Telemetry related modules
+│   │   ├── __init__.py
+│   │   ├── listener.py           # UDP listener
+│   │   └── models.py             # Data models
+│   ├── analysis/                  # Analysis modules
+│   │   ├── __init__.py
+│   │   ├── lap_analyzer.py       # Lap timing and analysis
+│   │   └── data_logger.py        # Data logging and processing
+│   ├── visualization/             # Visualization components
+│   │   ├── __init__.py
+│   │   ├── gui.py               # Main GUI interface
+│   │   └── plots.py             # Data visualization
+│   └── utils/                     # Utility functions
+│       └── __init__.py
+├── tests/                         # Test files
+│   ├── test_telemetry/
+│   ├── test_analysis/
+│   └── test_visualization/
+├── data/                          # Data storage
+│   ├── raw/                      # Raw telemetry logs
+│   └── processed/                # Processed data
+├── docs/                          # Documentation
+│   ├── api/
+│   └── user_guide/
+├── config/                        # Configuration files
+│   └── default_config.py         # Default configuration
+├── scripts/                       # Utility scripts
+├── requirements/                  # Dependencies
+│   ├── base.txt                  # Basic requirements
+│   ├── dev.txt                   # Development requirements
+│   └── test.txt                  # Testing requirements
+├── main.py                        # Application entry point
+└── README.md                      # This file
 ```

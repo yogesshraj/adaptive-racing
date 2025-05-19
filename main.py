@@ -2,12 +2,12 @@ import signal
 import sys
 from typing import Optional
 from pathlib import Path
-from data_models import PACKET_IDS, PacketCarTelemetryData, PacketLapData, PacketSessionData, TRACK_IDS
-from telemetry_listener import TelemetryListener
-from gui import TelemetryGUI, TelemetryData
-from data_logger import DataLogger
-from lap_analyzer import SessionAnalyzer
-from config import GUI_UPDATE_INTERVAL
+from src.telemetry.models import PACKET_IDS, PacketCarTelemetryData, PacketLapData, PacketSessionData, TRACK_IDS
+from src.telemetry.listener import TelemetryListener
+from src.visualization.gui import TelemetryGUI, TelemetryData
+from src.analysis.data_logger import DataLogger
+from src.analysis.lap_analyzer import SessionAnalyzer
+from config.default_config import GUI_UPDATE_INTERVAL
 
 class F1TelemetryApp:
     def __init__(self):

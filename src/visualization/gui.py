@@ -3,12 +3,12 @@ from tkinter import ttk
 import time
 from typing import Dict, Optional, List, Callable
 from dataclasses import dataclass
-from config import GUI_UPDATE_INTERVAL
+from config.default_config import GUI_UPDATE_INTERVAL
 from datetime import datetime
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QApplication
 from PyQt5.QtCore import Qt, QThread, QTimer
 import sys
-from visualizations import TelemetryVisualizer
+from src.visualization.plots import TelemetryVisualizer
 
 # Initialize Qt Application
 qt_app = QApplication.instance()

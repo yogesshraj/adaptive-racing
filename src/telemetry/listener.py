@@ -4,8 +4,8 @@ import threading
 from typing import Callable, Dict, Optional
 from ctypes import sizeof, create_string_buffer, memmove, addressof, Structure
 
-from data_models import PacketHeader, PACKET_STRUCTURES
-from config import UDP_IP, UDP_PORT
+from src.telemetry.models import PacketHeader, PACKET_STRUCTURES
+from config.default_config import UDP_IP, UDP_PORT
 
 class TelemetryListener:
     def __init__(self, ip: str = UDP_IP, port: int = UDP_PORT):

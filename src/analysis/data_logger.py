@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Dict, List, Optional
 from dataclasses import asdict
 
-from gui import TelemetryData
+from src.visualization.gui import TelemetryData
 
 class DataLogger:
     def __init__(self, base_path: str = "telemetry_logs"):
