@@ -218,4 +218,3 @@ class DataLogger:
             update_nested(self.session_info, key, value)
         
         self._save_session_info()
-        print(f"Updated session info: {self.session_info}") 

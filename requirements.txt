@@ -7,4 +7,5 @@
 # - dataclasses (standard library, Python 3.7+) 
 numpy>=1.21.0
 PyQt5>=5.15.0
-pyqtgraph>=0.13.0 
+pyqtgraph>=0.12.0
+# (add any other dependencies you need for telemetry, analysis, etc.) 

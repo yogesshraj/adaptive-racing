@@ -20,10 +20,8 @@ class LapAnalysis:
 class SessionAnalyzer:
     def __init__(self, session_path: Path):
         """Initialize the session analyzer with a path to a session directory"""
-        print(f"\nInitializing SessionAnalyzer for {session_path}")
         self.session_path = Path(session_path)
         self.session_info = self._load_session_info()
-        print(f"Loaded session info: {self.session_info}")
         self.lap_analyses: List[LapAnalysis] = []
         self._analyze_session()
 
@@ -31,9 +29,7 @@ class SessionAnalyzer:
         """Load session information from session_info.json"""
         try:
             session_info_path = self.session_path / "session_info.json"
-            print(f"Loading session info from: {session_info_path}")
             if not session_info_path.exists():
-                print("Session info file not found, using empty data")
                 return {
                     "lap_times": {},
                     "sector_times": {},
@@ -56,7 +52,6 @@ class SessionAnalyzer:
                 return data
                 
         except json.JSONDecodeError as e:
-            print(f"Error decoding session info JSON: {e}")
             return {
                 "lap_times": {},
                 "sector_times": {},
@@ -69,15 +64,12 @@ class SessionAnalyzer:
         """Analyze all laps in the session"""
         # Find all lap CSV files
         lap_files = sorted(self.session_path.glob("lap_*.csv"))
-        print(f"\nFound {len(lap_files)} lap files to analyze")
         
         for lap_file in lap_files:
             try:
                 lap_number = int(lap_file.stem.split('_')[1])
-                print(f"Analyzing lap {lap_number} from {lap_file}")
                 analysis = self._analyze_lap(lap_file, lap_number)
                 self.lap_analyses.append(analysis)
-                print(f"Lap {lap_number} analysis: valid={analysis.is_valid}, time={analysis.lap_time}ms")
             except Exception as e:
                 print(f"Error analyzing lap {lap_file}: {e}")
 
