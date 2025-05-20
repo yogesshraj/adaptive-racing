@@ -1,9 +1,18 @@
 import sys
-from PyQt5.QtWidgets import QApplication
-from src.app.gui.main_window import MainWindow
+import os
+
+# Add the project root directory to Python path
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from PyQt6.QtWidgets import QApplication
+from src.visualization.gui import TelemetryDisplay
+
+def main():
+    """Main entry point for the F1 22 Telemetry Application."""
+    app = QApplication(sys.argv)
+    window = TelemetryDisplay()
+    window.show()
+    sys.exit(app.exec())
 
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    window = MainWindow()
-    window.show()
-    sys.exit(app.exec_()) 
+    main() 
