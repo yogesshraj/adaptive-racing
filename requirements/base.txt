@@ -1,10 +1,5 @@
-# No external dependencies required - using only Python standard library
-# The application uses:
-# - socket (standard library)
-# - threading (standard library)
-# - tkinter (standard library)
-# - ctypes (standard library)
-# - dataclasses (standard library, Python 3.7+) 
 numpy>=1.21.0
-PyQt5>=5.15.0
-pyqtgraph>=0.13.0 
+pandas>=1.3.0
+PyQt6>=6.4.0  # For GUI
+matplotlib>=3.4.0  # For plotting
+python-socketio>=5.7.0  # For UDP communication 
