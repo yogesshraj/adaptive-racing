@@ -1,5 +1,0 @@
-numpy>=1.21.0
-pandas>=1.3.0
-PyQt6>=6.4.0  # For GUI
-matplotlib>=3.4.0  # For plotting
-python-socketio>=5.7.0  # For UDP communication 
